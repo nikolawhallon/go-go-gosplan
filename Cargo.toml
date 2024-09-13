@@ -1,0 +1,13 @@
+[package]
+name = "go-go-gosplan"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.5", features = ["ws"] }
+axum-server = { version = "0.4", features = ["tls-rustls"] }
+futures = "0.3"
+tokio = { version = "1.17", features = ["macros", "rt", "rt-multi-thread"] }
+tokio-tungstenite = { version = "0.15.0", features = ["native-tls"] }
+tungstenite = "0.14"
+uuid = { version = "1.10", features = ["v4"] }
