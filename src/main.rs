@@ -44,7 +44,9 @@ async fn handle_socket(socket: WebSocket, state: Arc<State>) {
 
     let uuid = Uuid::new_v4();
 
-    let _ = sender.send(Message::Text(uuid.to_string())).await;
+    let _ = sender
+        .send(Message::Text(format!(r#"{{"id": "{}"}}"#, uuid)))
+        .await;
 
     {
         let mut connections = state.connections.lock().await;
